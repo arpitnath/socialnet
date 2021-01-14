@@ -71,6 +71,7 @@ export const TitleH3 = styled.h3`
 export const SidebarComp = styled.div`
 	position: sticky;
 	top: 80px;
+	margin-top: 5px;
 	flex: 0.2;
 	border-radius: 10px;
 	text-align: center;

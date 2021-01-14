@@ -15,6 +15,7 @@ import {
 	Span,
 	RecentP,
 } from './styled';
+import avatarImg from '../images/avatar.svg';
 
 const Sidebar = () => {
 	const recentItems = (topic) => (
@@ -28,7 +29,7 @@ const Sidebar = () => {
 		<SidebarComp>
 			<SidebarTop>
 				<BgImg src='https://images.unsplash.com/photo-1579546929518-9e396f3cc809?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=2550&q=80' />
-				<Avatar className='sidebarAvatar' />
+				<Avatar src={avatarImg} className='sidebarAvatar' />
 
 				<SidebarTitle>Sample Name</SidebarTitle>
 				<SidebarSpan>test@gmail.com</SidebarSpan>
