@@ -1,7 +1,7 @@
 import React from 'react';
-import Feed from '../components/Feed';
 import Header from '../components/Header';
 import Sidebar from '../components/Sidebar';
+import Feed from '../components/Feed';
 
 const HomeScreen = () => {
 	return (

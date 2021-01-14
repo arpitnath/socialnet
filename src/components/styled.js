@@ -7,6 +7,7 @@ export const HeaderComp = styled.div`
 	position: sticky;
 	top: 0;
 	display: flex;
+	/* background-color: #fff; */
 	justify-content: space-evenly;
 	border-bottom: 0.1px solid #424242;
 	padding-top: 3px;
@@ -150,7 +151,7 @@ export const Recent = styled.div`
 	padding: 5px;
 
 	&:hover {
-		background-color: whitesmoke;
+		background-color: #363a58;
 		border-radius: 5px;
 		cursor: pointer;
 		color: black;
@@ -170,6 +171,7 @@ export const FeedComp = styled.div`
 	color: #efefef;
 	flex: 0.6;
 	margin: 0 20px;
+	margin-top: 5px;
 `;
 export const InputContainer = styled.div`
 	display: flex;
@@ -178,6 +180,7 @@ export const InputContainer = styled.div`
 	border-radius: 10px;
 	margin-bottom: 20px;
 	background-color: #1a1c2f;
+	padding: 20px;
 `;
 export const FeedInput = styled.div`
 	border: 1px solid #616161;
@@ -185,10 +188,9 @@ export const FeedInput = styled.div`
 	display: flex;
 	padding: 10px;
 	color: #616161;
-	/* padding-left: 15px; */
+	padding-left: 15px;
 	width: 100%;
-	margin-top: 20px;
-	padding: 10px;
+	/* margin-top: 20px; */
 `;
 
 export const FeedForm = styled.form`
@@ -199,7 +201,7 @@ export const FeedFormInput = styled.input`
 	border: none;
 	flex: 1;
 	margin-left: 10px;
-	outline-width: 0;
+	outline-width: 0px;
 	font-weight: 600;
 	outline: none;
 	border: none;
@@ -208,4 +210,35 @@ export const FeedFormInput = styled.input`
 `;
 export const FeedButton = styled.button`
 	display: none;
+`;
+
+export const OptionContainer = styled.div`
+	border-radius: 0 10px;
+	/* margin-bottom: 20px; */
+	margin-top: -50px;
+	background-color: #1a1c2f;
+	padding: 20px;
+`;
+
+export const FeedOptions = styled.div`
+	display: flex;
+	justify-content: space-evenly;
+`;
+
+/**
+ * @FeedInputOptions
+ */
+
+export const InputOptions = styled.div`
+	display: flex;
+	align-items: center;
+	margin-top: 10px;
+	color: #e0e0e0;
+	padding: 10px;
+	cursor: pointer;
+
+	&:hover {
+		background-color: #363a58;
+		border-radius: 5px;
+	}
 `;
