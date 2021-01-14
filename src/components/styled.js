@@ -161,3 +161,51 @@ export const Span = styled.span`
 	margin-left: 5px;
 `;
 export const RecentP = styled.p``;
+
+/**
+ * @Feed
+ */
+
+export const FeedComp = styled.div`
+	color: #efefef;
+	flex: 0.6;
+	margin: 0 20px;
+`;
+export const InputContainer = styled.div`
+	display: flex;
+	justify-content: space-evenly;
+	padding-bottom: 20px;
+	border-radius: 10px;
+	margin-bottom: 20px;
+	background-color: #1a1c2f;
+`;
+export const FeedInput = styled.div`
+	border: 1px solid #616161;
+	border-radius: 30px;
+	display: flex;
+	padding: 10px;
+	color: #616161;
+	/* padding-left: 15px; */
+	width: 100%;
+	margin-top: 20px;
+	padding: 10px;
+`;
+
+export const FeedForm = styled.form`
+	display: flex;
+	width: 100%;
+`;
+export const FeedFormInput = styled.input`
+	border: none;
+	flex: 1;
+	margin-left: 10px;
+	outline-width: 0;
+	font-weight: 600;
+	outline: none;
+	border: none;
+	background: none;
+	color: white;
+`;
+export const FeedButton = styled.button`
+	display: none;
+`;

@@ -1,4 +1,5 @@
 import React from 'react';
+import Feed from '../components/Feed';
 import Header from '../components/Header';
 import Sidebar from '../components/Sidebar';
 
@@ -9,7 +10,7 @@ const HomeScreen = () => {
 
 			<div className='appBody'>
 				<Sidebar />
-				{/* Feed */}
+				<Feed />
 				{/* Widget */}
 			</div>
 		</div>
