@@ -55,7 +55,7 @@ export const Options = styled.div`
 	cursor: pointer;
 
 	&:hover {
-		color: #efefef;
+		color: #f5f5f5;
 	}
 `;
 
@@ -64,8 +64,14 @@ export const TitleH3 = styled.h3`
 	font-weight: 400;
 `;
 
-export const Avatar = styled.img`
-	object-fit: contain;
-	height: 40px;
-	margin-top: -7px;
+/**
+ * @Sidebar
+ */
+
+export const SidebarComp = styled.div`
+	color: #f5f5f5;
 `;
+
+export const BgImg = styled.img``;
+export const SidebarTitle = styled.h2``;
+export const SidebarSpan = styled.h4``;

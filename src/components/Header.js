@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import {
 	HeaderComp,
 	HeaderLeft,
@@ -28,11 +29,25 @@ const Header = () => {
 					</HeaderSearch>
 				</HeaderLeft>
 				<HeaderRight>
-					<HeaderOptions Icon={HomeIcon} title='Home' />
-					<HeaderOptions Icon={ExploreIcon} title='Explore' />
-					<HeaderOptions Icon={MessageIcon} title='Messages' />
-					<HeaderOptions Icon={NotificationsActiveIcon} title='Notifications' />
-					<HeaderOptions avatar={avatarImg} />
+					<Link to='/'>
+						<HeaderOptions Icon={HomeIcon} title='Home' />
+					</Link>
+					<Link to='explore'>
+						<HeaderOptions Icon={ExploreIcon} title='Explore' />
+					</Link>
+					<Link to='#'>
+						<HeaderOptions Icon={MessageIcon} title='Messages' />
+					</Link>
+
+					<Link to='#'>
+						<HeaderOptions
+							Icon={NotificationsActiveIcon}
+							title='Notifications'
+						/>
+					</Link>
+					<Link to='/profile'>
+						<HeaderOptions avatar={avatarImg} />
+					</Link>
 				</HeaderRight>
 			</HeaderComp>
 		</>
