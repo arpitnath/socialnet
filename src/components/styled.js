@@ -270,6 +270,7 @@ export const PostDesc = styled.p`
 	font-size: 12px;
 	color: #757575;
 	font-weight: 500;
+	margin-top: 3px;
 `;
 export const PostBody = styled.div`
 	overflow-wrap: anywhere;

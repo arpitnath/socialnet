@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import firebase from 'firebase';
 import CreateIcon from '@material-ui/icons/Create';
 import ImageIcon from '@material-ui/icons/Image';
 import VideoCallIcon from '@material-ui/icons/VideoCall';
@@ -16,9 +17,35 @@ import {
 } from './styled';
 import FeedInputOptions from './FeedInputOptions';
 import Post from './Post';
+import { db } from '../firebase';
 
 const Feed = () => {
+	const [input, setInput] = useState('');
 	const [posts, setPosts] = useState([]);
+
+	useEffect(() => {
+		db.collection('post').onSnapshot((snapshot) =>
+			setPosts(
+				snapshot.docs.map((doc) => ({
+					id: doc.id,
+					data: doc.data(),
+				}))
+			)
+		);
+	}, []);
+
+	const sendPost = (e) => {
+		e.preventDefault();
+
+		db.collection('post').add({
+			name: 'John doe',
+			description: 'this is a test',
+			message: input,
+			photoUrl: '',
+			timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+		});
+		setInput('');
+	};
 
 	return (
 		<FeedComp>
@@ -26,8 +53,15 @@ const Feed = () => {
 				<FeedInput>
 					<CreateIcon />
 					<FeedForm>
-						<FeedFormInput type='text' placeholder='Start a post' />
-						<FeedButton type='submit'>Send</FeedButton>
+						<FeedFormInput
+							value={input}
+							onChange={(e) => setInput(e.target.value)}
+							type='text'
+							placeholder='Start a post'
+						/>
+						<FeedButton onClick={sendPost} type='submit'>
+							Send
+						</FeedButton>
 					</FeedForm>
 				</FeedInput>
 			</InputContainer>
@@ -52,16 +86,15 @@ const Feed = () => {
 				</FeedOptions>
 			</OptionContainer>
 
-			{posts.map((post) => (
-				<Post />
+			{posts.map(({ id, data: { name, description, message, photoUrl } }) => (
+				<Post
+					key={id}
+					name={name}
+					description={description}
+					message={message}
+					photoUrl={photoUrl}
+				/>
 			))}
-
-			<Post
-				name='John doe'
-				description='This is for testing'
-				message='it worked!'
-				photoUrl='https://images.unsplash.com/photo-1485846234645-a62644f84728?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2240&q=80'
-			/>
 		</FeedComp>
 	);
 };
