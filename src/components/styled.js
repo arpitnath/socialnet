@@ -233,12 +233,55 @@ export const InputOptions = styled.div`
 	display: flex;
 	align-items: center;
 	margin-top: 10px;
-	color: #e0e0e0;
+	color: #9e9e9e;
 	padding: 10px;
 	cursor: pointer;
 
 	&:hover {
 		background-color: #363a58;
 		border-radius: 5px;
+		color: #efefef;
 	}
+`;
+
+/**
+ * @Post
+ */
+
+export const PostComp = styled.div`
+	background-color: #1a1c2f;
+	padding: 15px;
+	margin-bottom: 10px;
+	border-radius: 10px;
+	margin-top: 20px;
+`;
+export const PostHeader = styled.div`
+	display: flex;
+	margin-bottom: 10px;
+`;
+export const PostInfo = styled.div`
+	margin-left: 10px;
+`;
+export const PostH2 = styled.h2`
+	font-size: 15px;
+	color: #fafafa;
+`;
+export const PostDesc = styled.p`
+	font-size: 12px;
+	color: #757575;
+	font-weight: 500;
+`;
+export const PostBody = styled.div`
+	overflow-wrap: anywhere;
+	margin-top: 30px;
+	color: #e0e0e0;
+	font-size: 18px;
+	font-weight: bold;
+`;
+
+export const PostButtons = styled.div`
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	padding: 5px;
 `;
