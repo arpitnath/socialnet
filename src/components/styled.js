@@ -286,3 +286,14 @@ export const PostButtons = styled.div`
 	align-items: center;
 	padding: 5px;
 `;
+
+/**
+ * @Login
+ */
+
+export const Login = styled.div``;
+
+export const LoginImg = styled.img``;
+
+export const LogForm = styled.form``;
+export const LogInput = styled.input``;

@@ -24,14 +24,16 @@ const Feed = () => {
 	const [posts, setPosts] = useState([]);
 
 	useEffect(() => {
-		db.collection('post').onSnapshot((snapshot) =>
-			setPosts(
-				snapshot.docs.map((doc) => ({
-					id: doc.id,
-					data: doc.data(),
-				}))
-			)
-		);
+		db.collection('post')
+			.orderBy('timestamp', 'desc')
+			.onSnapshot((snapshot) =>
+				setPosts(
+					snapshot.docs.map((doc) => ({
+						id: doc.id,
+						data: doc.data(),
+					}))
+				)
+			);
 	}, []);
 
 	const sendPost = (e) => {
