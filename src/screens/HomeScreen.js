@@ -7,13 +7,6 @@ import { useEffect } from 'react';
 
 const HomeScreen = ({ history }) => {
 	const userLogin = useSelector((state) => state.userLogin);
-	const { loading, error, userInfo } = userLogin;
-
-	useEffect(() => {
-		if (userInfo == null || !userInfo) {
-			history.push('/login');
-		}
-	}, [userInfo, history]);
 
 	return (
 		<div className='app'>

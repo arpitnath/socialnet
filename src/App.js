@@ -10,6 +10,7 @@ function App() {
 		<Router>
 			<Route path='/explore' component={ExploreScreen} />
 			<Route path='/login' component={LoginScreen} />
+
 			<Route path='/' exact component={HomeScreen} />
 		</Router>
 	);

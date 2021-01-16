@@ -1,5 +1,4 @@
-import { red } from '@material-ui/core/colors';
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import {
 	Login,
@@ -8,18 +7,38 @@ import {
 	LogInput,
 	LoginButton,
 } from '../components/styled';
+// import { auth } from '../firebase';
 import Logo from '../images/logo.svg';
+import { login } from '../actions/userActions';
+import { useDispatch, useSelector } from 'react-redux';
 
 const LoginScreen = () => {
-	const login = () => {};
+	const [email, setEmail] = useState('');
+	const [password, setPassword] = useState('');
+
+	const dispatch = useDispatch();
+
+	const loginToapp = (e) => {
+		e.preventDefault();
+	};
 	return (
 		<>
 			<Login>
 				<LoginImg src={Logo} alt='logo' />
 				<LogForm>
-					<LogInput placeholder='Email' type='email' />
-					<LogInput placeholder='Password' type='password' />
-					<LoginButton onClick={login} type='submit'>
+					<LogInput
+						value={email}
+						onChange={(e) => setEmail(e.target.value)}
+						placeholder='Email'
+						type='email'
+					/>
+					<LogInput
+						value={password}
+						onChange={(e) => setPassword(e.target.value)}
+						placeholder='Password'
+						type='password'
+					/>
+					<LoginButton onClick={loginToapp} type='submit'>
 						Sign In
 					</LoginButton>
 				</LogForm>
@@ -27,8 +46,9 @@ const LoginScreen = () => {
 					style={{
 						color: '#efefef',
 						marginTop: '20px',
+						fontWeight: 'medium',
 					}}>
-					Not a member ?
+					Not a member?{' '}
 					<Link
 						to='/register'
 						style={{
@@ -36,7 +56,6 @@ const LoginScreen = () => {
 							textDecoration: 'none',
 							fontWeight: 'Bold',
 							cursor: 'pointer',
-							marginLeft: '5px',
 						}}>
 						Register Now
 					</Link>
