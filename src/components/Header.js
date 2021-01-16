@@ -25,7 +25,7 @@ const Header = () => {
 					<Image src={logo} alt='logo' />
 					<HeaderSearch>
 						<SearchIcon style={{}} />
-						<SerachInput type='text' />
+						<SerachInput placeholder='Search' type='text' />
 					</HeaderSearch>
 				</HeaderLeft>
 				<HeaderRight>

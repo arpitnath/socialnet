@@ -291,9 +291,46 @@ export const PostButtons = styled.div`
  * @Login
  */
 
-export const Login = styled.div``;
+export const Login = styled.div`
+	display: grid;
+	place-items: center;
+	margin-left: auto;
+	padding-top: 100px;
+	padding-bottom: 100px;
+	margin-right: auto;
+`;
 
-export const LoginImg = styled.img``;
+export const LoginImg = styled.img`
+	object-fit: center;
+	height: 170px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+`;
 
-export const LogForm = styled.form``;
-export const LogInput = styled.input``;
+export const LogForm = styled.form`
+	display: flex;
+	flex-direction: column;
+`;
+export const LogInput = styled.input`
+	width: 350px;
+	height: 50px;
+	font-size: 20px;
+	padding-left: 10px;
+	margin-bottom: 10px;
+	border-radius: 5px;
+`;
+
+export const LoginButton = styled.button`
+	width: 365px;
+	height: 50px;
+	font-size: large;
+	color: #efefef;
+	background-color: #85c5e5;
+	border-radius: 5px;
+	border: none;
+	cursor: pointer;
+
+	&:hover {
+		background-color: #6495ed;
+	}
+`;
